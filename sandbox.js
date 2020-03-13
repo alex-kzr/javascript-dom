@@ -1,17 +1,15 @@
-const ul = document.querySelector('ul');
+const copy = document.querySelector('.copy-me');
 
-const button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-    //ul.innerHTML += '<li>added item</li>';
-    const li = document.createElement('li');
-    li.textContent = 'something new';
-    //ul.append(li);
-    ul.prepend(li);
+copy.addEventListener('copy', () => {
+    console.log('content was copied');
 });
 
-ul.addEventListener('click', e => {
-    if(e.target.tagName === 'LI'){
-        e.target.remove();
-    }
+const box = document.querySelector('.box');
+box.addEventListener('mousemove', e => {
+    box.textContent = `x pos - ${e.offsetX}, y pos - ${e.offsetY}`;
+
+});
+
+document.addEventListener('wheel', e => {
+    console.log(e.pageX, e.pageY);
 });
