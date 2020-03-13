@@ -1,17 +1,17 @@
-// get an element by ID
-const title = document.getElementById('page-title');
-console.log(title);
+// change inner text of a tag
+const para = document.querySelector('p');
+para.innerText = 'JS is awesome!';
 
-// get elements by their class
-const errors = document.getElementsByClassName('error');
-console.log(errors);
-console.log(errors[0]);
-/* can't use forEach on HTMLCollection
-errors.forEach(error => {
-    console.log(error);
-}); */
+const paras = document.querySelectorAll('p');
+paras.forEach(para => {
+    para.innerText += ' added text';
+});
 
-// get elements by theur tag name
-const params = document.getElementsByTagName('p');
-console.log(params);
-console.log(params[0]);
+// change inner HTML of a tag
+const content = document.querySelector('.content');
+content.innerHTML += '<h2>This is a new H2</h2>';
+
+const people = ['mario', 'luigi', 'yoshi'];
+people.forEach(person => {
+    content.innerHTML += `<p>${person}</p>`;
+});
