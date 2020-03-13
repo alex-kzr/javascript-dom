@@ -1,15 +1,12 @@
-const article = document.querySelector('article');
-console.log(article.children);
+const button = document.querySelector('button');
 
-Array.from(article.children).forEach(child => {
-    child.classList.add('article-element');
+button.addEventListener('click', () => {
+    console.log('you clicked me');
 });
 
-const articleTitle = document.querySelector('h2');
-console.log(articleTitle.parentElement);
-console.log(articleTitle.parentElement.parentElement);
-console.log(articleTitle.nextElementSibling);
-console.log(articleTitle.previousElementSibling);
-
-// chaining
-console.log(articleTitle.nextElementSibling.parentElement.children);
+const items = document.querySelectorAll('li');
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        e.target.style.textDecoration = 'line-through';
+    });
+})
