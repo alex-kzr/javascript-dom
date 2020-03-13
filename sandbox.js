@@ -1,20 +1,17 @@
-// select first element
-const para = document.querySelector('p');
-console.log(para);
+// get an element by ID
+const title = document.getElementById('page-title');
+console.log(title);
 
-const para2 = document.querySelector('.error');
-console.log(para2);
+// get elements by their class
+const errors = document.getElementsByClassName('error');
+console.log(errors);
+console.log(errors[0]);
+/* can't use forEach on HTMLCollection
+errors.forEach(error => {
+    console.log(error);
+}); */
 
-const div = document.querySelector('div.error');
-console.log(div);
-
-
-// select multiple elements
-const paras = document.querySelectorAll('p');
-paras.forEach(para => {
-    console.log(para);
-});
-
-
-const errors = document.querySelectorAll('.error');
-console.log(errors[0]) // use first element from returned list
+// get elements by theur tag name
+const params = document.getElementsByTagName('p');
+console.log(params);
+console.log(params[0]);
