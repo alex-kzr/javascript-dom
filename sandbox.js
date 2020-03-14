@@ -1,22 +1,17 @@
 /* https://regex101.com/ */
 
 const form = document.querySelector('.signup-form');
+const feedback = document.querySelector('div.feedback');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    console.log(form.username.value);
-})
+    
+    const username = form.username.value;
+    const usernamePattern = /^[a-zA-Z]{6,12}/;
 
-const username = 'alexxx';
-const regexPattern = /^[a-z]{6,}$/;
-
-// let regexResult = username.search(regexPattern);
-// console.log(regexResult); // -1 or 1
-
-let regexResult = regexPattern.test(username);
-if(regexResult){
-    console.log('regex test passed :)')
-} else {
-    console.log('regex test failed :(')
-}
-
+    if(usernamePattern.test(username)){
+        feedback.textContent = 'that username is valid!';
+    } else {
+        feedback.textContent = 'username must contain letters only & be between 6 & 12 charcters long';
+    }
+});
